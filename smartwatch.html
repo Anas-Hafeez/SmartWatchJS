@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="smartwatch">
+        
+        <div id="times"></div>
+    </div>
+
+
+    <script>
+        function smart()
+        {
+            var time=document.getElementById('times');
+            var now=new Date();
+            var hours=String(now.getHours()).padStart(2,"0");      // padstart will give 2 digits for time like 01 02
+            var min=String(now.getMinutes()).padStart(2,"0");
+            var sec=String(now.getSeconds()).padStart(2,"0");
+
+            time.textContent=`${hours}:${min}:${sec}`;
+            time.style.marginLeft='80px';
+           
+            
+        }
+      setInterval(smart,1000);
+      smart();
+    </script>
+
+
+</body>
+</html>
